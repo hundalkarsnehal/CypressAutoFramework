@@ -1,0 +1,34 @@
+/// <reference types="Cypress" />
+
+import LPage from "../PageObjects/LPage";
+import Products from "../PageObjects/Products";
+ 
+const lObj=new LPage;
+const pObject=new Products;
+describe('Test Suite for Swag Lab login page',()=>{
+
+    it('Verify successful Login to Swag lab',()=>{
+      
+       lObj.openSwagLab();
+       lObj.loginToSwagLab();
+       pObject.verifyLoginSuccessful();
+       cy.screenshot("Successful Login");
+        
+    })
+
+    it.skip('Verify title of Swag lab',()=>{
+      
+        lObj.openSwagLab();
+        lObj.verifytitle();
+         
+     })
+
+     it('Verify url of Swag lab',()=>{
+      
+        lObj.openSwagLab();
+        lObj.verifyUrl();
+         
+     })
+})
+
+//58.25
